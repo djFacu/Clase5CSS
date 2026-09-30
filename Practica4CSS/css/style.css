@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+/* Variables */
+:root {
+   --color-primary: #FFBE2C;
+   --color-secondary: rgba(40, 106, 110, 0.815);
+   --color-text: black;
+
+   --font-main: Verdana, Geneva, Tahoma, sans-serif;
+   --family-font: "Lato", sans-serif;
+   /* --font-size-h1:  */
+}
+
+html {
+   font-size: 15px;
+   font-family: var(--family-font);
+}
+
+header {
+   background-color: var(--color-primary);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 2rem;
+
+   .logo {
+      width: 5rem;
+      height: auto;
+      /* display: inline-block; */
+      margin: 1rem 0;
+   }
+
+   .menu {
+      /* border: 1px solid; */
+      /* display: inline-block; */
+      /* vertical-align: 2.5rem; */
+
+      .menu-principal {
+         list-style: none;
+         display: flex;
+         gap: 2rem;
+
+         li {
+            a {
+               /* display: inline-block; */
+               border: 1px solid var(--color-primary);
+               padding: 0.5rem 2rem;
+               border-radius: .75rem;
+               color: var(--color-primary);
+               background-color: var(--color-secondary);
+               cursor: pointer;
+               text-decoration: none;
+               transition: transform 0.8s ease;
+            }
+
+            &:hover {
+               color: var(--color-secondary);
+               background-color: var(--color-primary);
+               border-color: var(--color-secondary);
+               transform: scale(1.1);
+            }
+         }
+      }
+   }
+
+   h1 {
+      text-align: center;
+   }
+}
+
+
+.container-main {
+   height: 300px;
+   /* border: 1px solid;
+   background-color: var(--color-primary); */
+   background-image: url("../assets/img/fondo.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   .description {
+      /* border: 1px solid black; */
+      width: 50vw;
+      padding: 3rem;
+
+      h1 {
+         font-size: clamp(1rem, -1.455rem + 7.27vw, 2rem);/* 1.5rem; */
+      }
+
+      p {
+         margin-top: 1rem;
+         margin-top: 2rem;
+         font-weight: 400;
+         letter-spacing: 0.25rem;
+         text-shadow: 2px 2px 4px white;
+      }
+   }
+}
+
+.aside {
+   width: 150px;
+   border: 1px solid;
+
+   .menu-categorias {
+      list-style: none;
+
+      li {
+         padding: 5px 10PX;
+         border: 1px solid;
+         border-radius: 15px;
+         text-align: center;
+      }
+   }
+}
+
+.container-product {
+   /* margin: 2rem auto; */
+   width: 100%;
+   text-align: center;
+   background-color: var(--color-primary);
+
+   h2,
+   h3 {
+      color: var(--color-secondary);
+      padding: 1.5rem 0 0;
+   }
+
+   .product-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-top: 1.5rem;
+      transition: 0.3s ease transform box-shadow;
+
+      .description {
+         padding: 1rem;
+      }
+
+      .product-card {
+         border: 1px solid;
+         border-radius: 10px;
+         width: 300px;
+         /* height: 500px; */
+         overflow: hidden;
+         background-color: beige;
+
+         .product-img {
+            object-fit: cover;
+         }
+
+         .product-content {
+            text-align: left;
+            padding: 0.5rem 1rem 1rem;
+
+            .product-category {
+               background-color: orange;
+               font-weight: bold;
+               letter-spacing: 2px;
+               padding: .25rem .5rem;
+               border-radius: 0.5rem;
+            }
+
+            .product-title {
+               font-size: 1.25rem;
+               font-weight: bold;
+               margin-top: 0.5rem;
+            }
+
+            .product-description {
+               display: -webkit-box;
+               -webkit-box-orient: vertical;
+               -webkit-line-clamp: 3;
+               line-clamp: 3;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               line-height: 1.7;
+            }
+
+            .product-button {
+               text-align: center;
+               padding: 0.5rem 1rem;
+               border-radius: 1rem;
+               color: white;
+               background-color: orange;
+               border-color: white;
+               margin-top: 0.75rem;
+            }
+         }
+         
+               &:hover {
+                  transform: scale(1.1);
+                  box-shadow: 4px 4px 4px var(--color-secondary);
+               }
+      }
+   }
+}
+
+
+@media screen and (max-width: 760px) {
+   header {
+      flex-direction: column;
+
+      .menu .menu-principal {
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+   }
+}
